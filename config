@@ -32,6 +32,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+#screenshot
+bindsym --release $mod+Print exec scrot -s ~/store/pictures/screenshot.png && xclip -selection clipboard -t image/png -i ~/store/pictures/screenshot.png
+
 # kill focused window
 bindsym $mod+Shift+x kill
 bindsym $mod+Escape kill
