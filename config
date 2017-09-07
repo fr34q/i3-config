@@ -98,6 +98,8 @@ bindsym $mod+u focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $monitor_master HDMI-0
+set $monitor_slave DVI-I-1
 set $web "1: Web"
 set $mail "9: Mail"
 
@@ -133,6 +135,10 @@ bindsym $mod+period focus output right
 bindsym $mod+Shift+comma move workspace to output left
 bindsym $mod+Shift+period move workspace to output right
 
+# predefined workspaces
+
+workspace $web output $monitor_slave
+workspace $mail output $monitor_master
 
 # predefined windows
 
@@ -191,6 +197,7 @@ exec_always xset -dpms
 exec_always setxkbmap de -variant neo
 exec_always xrandr --output DVI-I-1 --primary --output HDMI-0 --left-of DVI-I-1
 exec xcompmgr
+exec blueman-applet
 
 exec_always feh --bg-fill ~/store/documents/wallpaper/darkwood.jpg
 exec dropboxd
